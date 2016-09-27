@@ -7,7 +7,8 @@
 //
 
 #import "AppDelegate.h"
-
+#import "CLMacro.h"
+#import "ViewController.h"
 @interface AppDelegate ()
 
 @end
@@ -17,6 +18,14 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    self.window = [[UIWindow alloc]initWithFrame:[UIScreen mainScreen].bounds];
+    self.window.backgroundColor = [UIColor whiteColor];
+    UITabBarController *tabbar = [[UITabBarController alloc]init];
+    [tabbar CL_addViewControlerWithClass:[ViewController class] title:@"ITEM1" image:@"1" selectImage:@"1"];
+    [tabbar CL_addViewControlerWithClass:[ViewController class] title:@"ITEM2" image:@"2" selectImage:@"2"];
+
+    self.window.rootViewController = tabbar;
+    [self.window makeKeyAndVisible];
     return YES;
 }
 

@@ -396,4 +396,6 @@ blue:((float)(rgbValue & 0xFF)) / 255.0 alpha:1.0]
 #import "UITextField+CLTextField.h"
 #import "UIView+CLView.h"
 #import "UIView+CLBadgeView.h"
-
+#import "UITabBarController+CLTabBarController.h"
+#import "UIViewController+CLViewController.h"
+#import "UILabel+CLLabel.h"

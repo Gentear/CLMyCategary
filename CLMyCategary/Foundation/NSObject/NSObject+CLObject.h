@@ -9,7 +9,12 @@
 #import <Foundation/Foundation.h>
 
 @interface NSObject (CLObject)
-
+/**
+ *  方法交换
+ *
+ *  @param originalSelector 系统方法
+ *  @param swizzledSelector 新方法
+ */
 + (void)swizzleSelector:(SEL)originalSelector withSwizzledSelector:(SEL)swizzledSelector;
 - (NSDictionary*)propertiesValues;
 @end

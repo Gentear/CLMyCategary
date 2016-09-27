@@ -8,7 +8,7 @@
 
 #import "ViewController.h"
 #import "CLMacro.h"
-
+#import "CLNextViewController.h"
 #define SCREEN_WIDTH ([UIScreen mainScreen].bounds.size.width)
 #define SCREEN_HEIGHT ([UIScreen mainScreen].bounds.size.height)
 @interface ViewController ()
@@ -159,6 +159,17 @@ Array_(dataArray);
 //    moveFieldheight.cl_moveView = leftView;
 //    moveFieldheight.placeholder = [NSString stringWithFormat:@"距离为%fpx",moveFieldheight.cl_heightToKeyboard];
 //    [leftView addSubview:moveFieldheight];
+    
+    
+    UIButton *BUTTON = [UIButton buttonWithType:UIButtonTypeSystem];
+    BUTTON.frame = CGRectMake(100, 200, 100, 100);
+    [BUTTON setTitle:@"点击一下" forState:UIControlStateNormal];
+    [BUTTON addTarget:self action:@selector(rightButtonClick:) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:BUTTON];
+    
+}
+- (void)rightButtonClick:(UIButton *)sender{
+    [self.navigationController pushViewController:[CLNextViewController alloc].init animated:YES];
 }
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
