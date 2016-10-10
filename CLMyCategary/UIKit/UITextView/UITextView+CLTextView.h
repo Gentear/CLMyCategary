@@ -19,7 +19,9 @@ FOUNDATION_EXPORT const unsigned char UITextView_PlaceholderVersionString[];
 @interface UITextView (CLTextView)
 
 @property (nonatomic, readonly) UILabel *placeholderLabel;
-
+/**
+ *  提示文字
+ */
 @property (nonatomic, strong) IBInspectable NSString *placeholder;
 @property (nonatomic, strong) NSAttributedString *attributedPlaceholder;
 @property (nonatomic, strong) IBInspectable UIColor *placeholderColor;
