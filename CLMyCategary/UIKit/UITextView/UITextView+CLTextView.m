@@ -191,5 +191,17 @@
     CGFloat height = [self.placeholderLabel sizeThatFits:CGSizeMake(width, 0)].height;
     self.placeholderLabel.frame = CGRectMake(x, y, width, height);
 }
-
+- (NSInteger)cl_getInputLengthWithText:(NSString *)text
+{
+    NSInteger textLength = 0;
+    //获取高亮部分
+    UITextRange *selectedRange = [self markedTextRange];
+    if (selectedRange) {
+        NSString *newText = [self textInRange:selectedRange];
+        textLength = (newText.length + 1) / 2 + [self offsetFromPosition:self.beginningOfDocument toPosition:selectedRange.start] + text.length;
+    } else {
+        textLength = self.text.length + text.length;
+    }
+    return textLength;
+}
 @end

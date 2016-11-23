@@ -49,7 +49,7 @@ const void *kHidesNavigationBarWhenPush = "kHidesNavigationBarWhenPush";
 }
 
 
--(void)setCustomNavigationTitle:(NSString *)title
+-(void)cl_setCustomNavigationTitle:(NSString *)title
 {
     UILabel *titleLabel = [[UILabel alloc]initWithFrame:CGRectMake(70, 0, 180, 44)];
     titleLabel.backgroundColor = [UIColor clearColor];
@@ -62,7 +62,7 @@ const void *kHidesNavigationBarWhenPush = "kHidesNavigationBarWhenPush";
     self.navigationItem.titleView = titleLabel;
 }
 
-- (void)add_navigation_back_button
+- (void)cl_add_navigation_back_button
 {
     //左侧按钮
     UIButton *backButton = [[UIButton alloc] initWithFrame: CGRectMake(0, 0, 20.0f, 40.0f)];
@@ -76,7 +76,7 @@ const void *kHidesNavigationBarWhenPush = "kHidesNavigationBarWhenPush";
 
 
 
--(UIButton *)add_navigation_right_buttonWithNormalImage:(NSString *)normalImageName highlightImage:(NSString *)highlightImageName
+-(UIButton *)cl_add_navigation_right_buttonWithNormalImage:(NSString *)normalImageName highlightImage:(NSString *)highlightImageName
 {
     //右侧按钮
     UIButton *rightButton = [[UIButton alloc] initWithFrame: CGRectMake(0, 0, 22.0f, 20.0f)];
@@ -89,7 +89,7 @@ const void *kHidesNavigationBarWhenPush = "kHidesNavigationBarWhenPush";
     return rightButton;
 }
 
--(UIButton *)add_navigation_right_button_BT:(UIButton *)rightButton
+-(UIButton *)cl_add_navigation_right_button_BT:(UIButton *)rightButton
 {
     [rightButton addTarget:self action:@selector(navigation_right_button_click:) forControlEvents:UIControlEventTouchUpInside];
     UIBarButtonItem *backButtonItem = [[UIBarButtonItem alloc] initWithCustomView:rightButton];
@@ -98,7 +98,7 @@ const void *kHidesNavigationBarWhenPush = "kHidesNavigationBarWhenPush";
     return rightButton;
 }
 
--(UIButton *)add_navigation_right_button_title:(NSString *)title
+-(UIButton *)cl_add_navigation_right_button_title:(NSString *)title
 {
     //右侧按钮
     UIButton *rightButton = [[UIButton alloc] initWithFrame: CGRectMake(0, 0, 70.f, 20.0f)];
@@ -113,12 +113,12 @@ const void *kHidesNavigationBarWhenPush = "kHidesNavigationBarWhenPush";
     return rightButton;
 }
 
--(void)navigation_right_button_click:(UIButton *)button
+-(void)cl_navigation_right_button_click:(UIButton *)button
 {
     
 }
 
-- (void)hideTabBar
+- (void)cl_hideTabBar
 {
     if (self.tabBarController.tabBar.hidden == YES) {
         return;
@@ -131,7 +131,7 @@ const void *kHidesNavigationBarWhenPush = "kHidesNavigationBarWhenPush";
     }];
 }
 
-- (void)showTabBar
+- (void)cl_showTabBar
 {
     if (self.tabBarController.tabBar.hidden == NO)
     {
@@ -147,7 +147,7 @@ const void *kHidesNavigationBarWhenPush = "kHidesNavigationBarWhenPush";
     }];
 }
 
-- (void)hideTabBar:(UITabBarController *)tab
+- (void)cl_hideTabBar:(UITabBarController *)tab
 {
     if (tab.tabBar.hidden == YES) {
         return;
@@ -159,7 +159,7 @@ const void *kHidesNavigationBarWhenPush = "kHidesNavigationBarWhenPush";
     }];
 }
 
-- (void)showTabBar:(UITabBarController *)tab
+- (void)cl_showTabBar:(UITabBarController *)tab
 {
     if (tab.tabBar.hidden == NO)
     {
@@ -173,7 +173,7 @@ const void *kHidesNavigationBarWhenPush = "kHidesNavigationBarWhenPush";
 
 
 
--(UIButton *)add_navigation_back_title:(NSString *)title
+-(UIButton *)cl_add_navigation_back_title:(NSString *)title
 {
     UIButton * backBT = [UIButton buttonWithType:UIButtonTypeCustom];
     [backBT setTitle:title forState:UIControlStateNormal];
@@ -190,7 +190,7 @@ const void *kHidesNavigationBarWhenPush = "kHidesNavigationBarWhenPush";
     return backBT;
 }
 
--(UIButton *)add_navigation_left_buttonWithNormalImage:(NSString *)normalImageName highlightImage:(NSString *)highlightImageName
+-(UIButton *)cl_add_navigation_left_buttonWithNormalImage:(NSString *)normalImageName highlightImage:(NSString *)highlightImageName
 {
     //左侧按钮
     UIButton *leftButton = [[UIButton alloc] initWithFrame: CGRectMake(0, 0, 22.0f, 20.0f)];
@@ -202,12 +202,12 @@ const void *kHidesNavigationBarWhenPush = "kHidesNavigationBarWhenPush";
     return leftButton;
 }
 
--(void)navigation_left_button_click:(UIButton *)button
+-(void)cl_navigation_left_button_click:(UIButton *)button
 {
     [self.navigationController popViewControllerAnimated:YES];
 }
 
--(void)dismissRootVCWithAnimation:(BOOL)isAnimation
+-(void)cl_dismissRootVCWithAnimation:(BOOL)isAnimation
 {
     UIViewController *viewController = self;
     while (viewController.presentingViewController)
@@ -234,14 +234,14 @@ const void *kHidesNavigationBarWhenPush = "kHidesNavigationBarWhenPush";
     
 }
 
--(void)setBackGroudImage:(UIImage *)image
+-(void)cl_setBackGroudImage:(UIImage *)image
 {
     if (self.navigationController.navigationBar) {
         [self.navigationController.navigationBar setBackgroundImage:image forBarMetrics:UIBarMetricsDefault];
     }
 }
 
--(void)setPopThouch
+-(void)cl_setPopThouch
 {
     if (self.navigationController) {
         __weak UINavigationController * weakNav = self.navigationController;
@@ -253,17 +253,20 @@ const void *kHidesNavigationBarWhenPush = "kHidesNavigationBarWhenPush";
 }
 
 
--(void)setnavigationTranslucent:(BOOL)flag
+-(void)cl_setnavigationTranslucent:(BOOL)flag
 {
     if (self.navigationController.navigationBar) {
         self.navigationController.navigationBar.translucent = flag;
     }
 }
 
--(void)setTabConreollerTranslucent:(BOOL)flag
+-(void)cl_setTabConreollerTranslucent:(BOOL)flag
 {
     if (self.tabBarController.tabBar) {
         self.tabBarController.tabBar.translucent = flag;
     }
+}
+- (BOOL)cl_isVisible {
+    return [self isViewLoaded] && self.view.window;
 }
 @end

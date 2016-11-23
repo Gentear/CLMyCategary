@@ -10,7 +10,10 @@
 #import <UIKit/UIKit.h>
 
 @interface NSString (CLString)
-
+/**
+ *  英文一个字节 中文两个字节
+ */
+-(NSUInteger)unicodeLengthOfString;
 /**
  *  文字首字母
  *

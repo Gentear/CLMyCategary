@@ -22,6 +22,18 @@
 @end
 @implementation NSString (CLString)
 
+/**
+ *  英文一个字节 中文两个字节
+ */
+-(NSUInteger)unicodeLengthOfString{
+    NSUInteger asciiLength = 0;
+    for (NSUInteger i = 0; i < self.length; i++) {
+        unichar uc = [self characterAtIndex: i];
+        asciiLength += isascii(uc) ? 1 : 3;
+    }
+    return asciiLength;
+}
+
 - (NSString *)CL_PINYINFirst{
     
     NSMutableString *mutableString = [NSMutableString stringWithString:self];

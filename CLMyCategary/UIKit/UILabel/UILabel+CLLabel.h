@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "NSObject+CLObject.h"
-@interface UILabel (CLLabel)
 
+@interface UILabel (CLLabel)
+/**
+ *  随着背景改变文字颜色
+ */
+- (void) changeTextColorToUnmatchTheBG;
 @end

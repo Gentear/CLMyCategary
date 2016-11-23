@@ -84,6 +84,8 @@
  * 取消所有选中
  */
 - (void)clearSelectedRowsAnimated:(BOOL)animated;
-
-
+/**
+ *  ios7设置页面的UITableViewCell分组类型
+ */
+-(void)cl_SettingsStyleGrouping:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath;
 @end

@@ -13,51 +13,55 @@
 /**
  *  添加导航条title
  */
--(void)setCustomNavigationTitle:(NSString *)title;
+-(void)cl_setCustomNavigationTitle:(NSString *)title;
 /**
  *  添加返回按钮文字
  *
  */
--(UIButton *)add_navigation_back_title:(NSString *)title;
+-(UIButton *)cl_add_navigation_back_title:(NSString *)title;
 /**
  *  添加左边按钮图片
  *
  */
--(UIButton *)add_navigation_left_buttonWithNormalImage:(NSString *)normalImageName highlightImage:(NSString *)highlightImageName;
+-(UIButton *)cl_add_navigation_left_buttonWithNormalImage:(NSString *)normalImageName highlightImage:(NSString *)highlightImageName;
 /**
  *  添加返回按钮
  */
--(void)add_navigation_back_button;
+-(void)cl_add_navigation_back_button;
 /**
  *  添加右边按钮
  *
  */
--(UIButton *)add_navigation_right_buttonWithNormalImage:(NSString *)normalImageName highlightImage:(NSString *)highlightImageName;
+-(UIButton *)cl_add_navigation_right_buttonWithNormalImage:(NSString *)normalImageName highlightImage:(NSString *)highlightImageName;
 /**
  *  添加返回手势
  */
--(void)setPopThouch;
+-(void)cl_setPopThouch;
+/**
+ *  是否可见
+ */
+- (BOOL)cl_isVisible;
 
--(UIButton *)add_navigation_right_button_BT:(UIButton *)rightButton;
+-(UIButton *)cl_add_navigation_right_button_BT:(UIButton *)rightButton;
 
--(UIButton *)add_navigation_right_button_title:(NSString *)title;
+-(UIButton *)cl_add_navigation_right_button_title:(NSString *)title;
 
-- (void)hideTabBar;
+- (void)cl_hideTabBar;
 
-- (void)showTabBar;
+- (void)cl_showTabBar;
 
-- (void)hideTabBar:(UITabBarController *)tab;
+- (void)cl_hideTabBar:(UITabBarController *)tab;
 
-- (void)showTabBar:(UITabBarController *)tab;
+- (void)cl_showTabBar:(UITabBarController *)tab;
 
 
--(void)dismissRootVCWithAnimation:(BOOL)isAnimation;
+-(void)cl_dismissRootVCWithAnimation:(BOOL)isAnimation;
 
--(void)setBackGroudImage:(UIImage *)image;
+-(void)cl_setBackGroudImage:(UIImage *)image;
 
--(void)setnavigationTranslucent:(BOOL)flag;
+-(void)cl_setnavigationTranslucent:(BOOL)flag;
 
--(void)setTabConreollerTranslucent:(BOOL)flag;
+-(void)cl_setTabConreollerTranslucent:(BOOL)flag;
 
 @end
 

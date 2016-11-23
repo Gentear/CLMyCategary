@@ -1,9 +1,9 @@
 //
 //  UIView+CLBadgeView.h
-//  CLBadgeViewDemo
+//  myCategary
 //
-//  Created by lisong on 15/12/19.
-//  Copyright © 2015年 haohaozhu. All rights reserved.
+//  Created by zyyt on 16/9/5.
+//  Copyright © 2016年 丛蕾. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>

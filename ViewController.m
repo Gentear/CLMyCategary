@@ -89,7 +89,12 @@ Array_(dataArray);
         return [string1 compare:string2];
     }];
     NSLog(@"%@",marr);
-    
+    UIImageView *image = [[UIImageView alloc]initWithFrame:CGRectMake(0, 200, 100, 100)];
+    [image cl_setImageWithString:@"CA"];
+    [self.view addSubview:image];
+    UIImageView *imageW = [[UIImageView alloc]initWithFrame:CGRectMake(0, 200, 100, 100)];
+    [imageW cl_setImageWithString:@"CB"];
+    [self.view addSubview:imageW];
 //    self.view.backgroundColor = [UIColor redColor];
 //    
 //    
@@ -164,12 +169,15 @@ Array_(dataArray);
     UIButton *BUTTON = [UIButton buttonWithType:UIButtonTypeSystem];
     BUTTON.frame = CGRectMake(100, 200, 100, 100);
     [BUTTON setTitle:@"点击一下" forState:UIControlStateNormal];
-    [BUTTON addTarget:self action:@selector(rightButtonClick:) forControlEvents:UIControlEventTouchUpInside];
+//    [BUTTON addTarget:self action:@selector(rightButtonClick:) forControlEvents:UIControlEventTouchUpInside];
+    [BUTTON cl_addTargeActionHandler:^(UIButton *myButton,NSInteger tag) {
+        [self.navigationController pushViewController:[CLNextViewController alloc].init animated:YES];
+    }];
     [self.view addSubview:BUTTON];
-    
+    [BUTTON cl_beginSubmitting:UIActivityIndicatorViewStyleGray];
+    [BUTTON cl_endSubmitting];
 }
 - (void)rightButtonClick:(UIButton *)sender{
-    [self.navigationController pushViewController:[CLNextViewController alloc].init animated:YES];
 }
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

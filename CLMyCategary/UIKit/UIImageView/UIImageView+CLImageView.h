@@ -9,17 +9,34 @@
 #import <UIKit/UIKit.h>
 
 @interface UIImageView (CLImageView)
+/**
+*  创建圆角半径为r
+*
+*  @param cornerRadius   r
+*  @param rectCornerType UIRectCornerAllCorners 圆角位置
+*/
 - (instancetype)initWithCornerRadiusAdvance:(CGFloat)cornerRadius rectCornerType:(UIRectCorner)rectCornerType;
-
-- (void)zy_cornerRadiusAdvance:(CGFloat)cornerRadius rectCornerType:(UIRectCorner)rectCornerType;
+/**
+ *  创建圆角半径为r
+ *
+ *  @param cornerRadius   r
+ *  @param rectCornerType UIRectCornerAllCorners圆角位置
+ */
+- (void)cl_cornerRadiusAdvance:(CGFloat)cornerRadius rectCornerType:(UIRectCorner)rectCornerType;
 /**
  *  获得圆形的imageview
  *
- *  @return <#return value description#>
+ *  @return image
  */
 - (instancetype)initWithRoundingRectImageView;
-
-- (void)zy_cornerRadiusRoundingRect;
-
-- (void)zy_attachBorderWidth:(CGFloat)width color:(UIColor *)color;
+/**
+ *  获得圆形的imageview
+ *
+ *  @return image
+ */
+- (void)cl_cornerRadiusRoundingRect;
+/**
+ *  可为UIImageView的图片附加边框
+ */
+- (void)cl_attachBorderWidth:(CGFloat)width color:(UIColor *)color;
 @end
